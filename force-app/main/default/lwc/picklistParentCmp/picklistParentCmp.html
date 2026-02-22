@@ -1,0 +1,12 @@
+<template>
+    <c-picklist-cmp
+        object-api-name="Account"
+        field-api-name="Account.Rating"
+        onvaluechange={handleRatingChange}
+    ></c-picklist-cmp>
+    <c-picklist-cmp
+        object-api-name="Contact"
+        field-api-name="Contact.LeadSource"
+        onvaluechange={handleLeadSourceChange}
+    ></c-picklist-cmp>
+</template>

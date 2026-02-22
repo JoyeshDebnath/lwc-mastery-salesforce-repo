@@ -1,0 +1,14 @@
+<template>
+    <div class="slds-m-around_medium">
+           <template lwc:if={contacts.data}>
+                <lightning-datatable
+                        key-field="Id"
+                        data={contacts.data}
+                        columns={columns}
+                        onsave={handleSave}
+                        draft-values={darftValues}
+                >
+                </lightning-datatable>
+           </template>
+    </div>
+</template>
