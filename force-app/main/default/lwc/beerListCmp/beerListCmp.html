@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-m-around_medium">
+       <div class="">
+             <c-beer-search-cmp onbeersearch={handleBeerSearch}></c-beer-search-cmp>
+       </div>
+       <div>
+        <lightning-layout multiple-rows horizontal-align="space">
+                <template for:each={beers} for:index="i" for:item="beer">
+                        <lightning-layout-item size="4" flexibility="auto" padding-around="small" key={beer.Id}>
+                            <c-beer-tile-cmp beer-record={beer}></c-beer-tile-cmp>
+                        </lightning-layout-item>
+                 </template>
+        </lightning-layout>
+              
+       </div>
+    </div>
+</template>
