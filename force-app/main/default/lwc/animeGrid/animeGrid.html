@@ -1,3 +1,33 @@
 <template>
+    <template if:true={showEmpty}>
+        <div class="empty-state">
+            <lightning-icon icon-name="utility:search" size="large"></lightning-icon>
+            <p class="empty-title">No Anime Found !</p>
+            <p class="empty-sub">Try Adjusting your search filters !</p>
+        </div>
+    </template>
+    <template if:true={showWelcome}>
+         <div class="empty-state">
+            <lightning-icon icon-name="standard:feed" size="large"></lightning-icon>
+            <p class="empty-title">Search to get started</p>
+            <p class="empty-sub">Use the filters above to find any anime</p>
+        </div>
+    </template>
+
+    <!-- onviewdetail is fired by animeCard.
+                    We DON'T handle it here — we let it bubble (bubbles:true)
+                    straight up to animeExplorer which listens for it.
+                    This grid component stays clean and knows nothing about detail logic.
+                -->
+    <template if:true={hasAnime}>
+        <div class="card-grid">
+            <template for:each={animeList} for:item="anime">
+                 <c-anime-card
+                    key={anime.malId}
+                    anime={anime}>
+                </c-anime-card>
+            </template>
+        </div>
+    </template>
     
 </template>

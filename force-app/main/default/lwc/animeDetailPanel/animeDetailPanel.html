@@ -1,3 +1,71 @@
 <template>
-    
+    <div class="panel-backdrop" onclick={handleBackdropClick}>
+        <div class="panel" onclick={stopBubble}>
+
+            <div class="panel-header">
+                <span class="panel-title">Anime details</span>
+                <button class="close-btn" onclick={handleClose}>✕</button>
+            </div>
+
+            <div class="panel-scroll">
+                <img
+                    src={anime.imageUrl}
+                    alt={anime.title}
+                    class="panel-img"
+                    onerror={handleImgError}/>
+
+                <div class="panel-body">
+                    <h2 class="panel-anime-title">{anime.title}</h2>
+                    <p class="panel-anime-sub">{anime.titleEnglish}</p>
+
+                    <!-- Meta chips row -->
+                    <div class="chips slds-var-m-top_small">
+                        <template if:true={anime.animeType}>
+                            <lightning-badge label={anime.animeType}></lightning-badge>
+                        </template>
+                        <template if:true={anime.status}>
+                            <lightning-badge label={anime.status}></lightning-badge>
+                        </template>
+                        <template if:true={anime.year}>
+                            <lightning-badge label={anime.year}></lightning-badge>
+                        </template>
+                        <template if:true={anime.rating}>
+                            <lightning-badge label={anime.rating}></lightning-badge>
+                        </template>
+                    </div>
+
+                    <!-- Score + episodes -->
+                    <div class="score-row slds-var-m-top_small">
+                        <span class="score-pill">⭐ {scoreDisplay}</span>
+                        <span class="ep-label">{episodeLabel}</span>
+                    </div>
+
+                    <!-- Genres -->
+                    <template if:true={hasGenres}>
+                        <div class="genres slds-var-m-top_small">
+                            <template for:each={anime.genres} for:item="genre">
+                                <span key={genre} class="genre-tag">{genre}</span>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Synopsis -->
+                    <template if:true={anime.synopsis}>
+                        <p class="synopsis slds-var-m-top_medium">{anime.synopsis}</p>
+                    </template>
+
+                    <!-- MAL link -->
+                    <template if:true={anime.url}>
+                        <lightning-button
+                            variant="brand"
+                            label="View on MyAnimeList ↗"
+                            class="slds-var-m-top_medium"
+                            onclick={openMAL}>
+                        </lightning-button>
+                    </template>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </template>

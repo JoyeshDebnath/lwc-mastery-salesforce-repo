@@ -1,0 +1,21 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #706e6b;
+}
+.empty-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #3e3e3c;
+    margin: 12px 0 4px;
+}
+.empty-sub {
+    font-size: 13px;
+    color: #706e6b;
+}

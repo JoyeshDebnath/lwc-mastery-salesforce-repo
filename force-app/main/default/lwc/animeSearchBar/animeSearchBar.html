@@ -1,3 +1,59 @@
 <template>
-    
+    <div class="search-bar">
+        <div class="slds-grid slds-gutters slds-wrap slds-align_absolute-center">
+
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+                <lightning-input
+                    type="search"
+                    label="Search Anime"
+                    placeholder="Search Anime"
+                    value={localQuery}
+                    onchange={handleQueryChange}
+                ></lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_2-of-12">
+                <lightning-combobox
+                    label="Type"
+                    value={localType}
+                    options={typeOptions}
+                    onchange={handleTypeChange}
+                ></lightning-combobox>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_2-of-12">
+                <lightning-combobox
+                    label="Status"
+                    value={localStatus}
+                    options={statusOptions}
+                    onchange={handleStatusChange}
+                ></lightning-combobox>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2 slds-medium-size_2-of-12">
+                <lightning-combobox
+                    label="Rating"
+                    value={localRating}
+                    options={ratingOptions}
+                    onchange={handleRatingChange}
+                ></lightning-combobox>
+            </div>
+
+             <div class="slds-col slds-size_1-of-2 slds-medium-size_2-of-12 btn-col">
+                <lightning-button
+                    variant="brand"
+                    label="Search"
+                    icon-name="utility:search"
+                    disabled={isLoading}
+                    onclick={fireSearch}>
+                </lightning-button>
+                <lightning-button
+                    variant="neutral"
+                    label="Reset"
+                    class="slds-var-m-left_x-small"
+                    onclick={fireReset}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
 </template>

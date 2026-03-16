@@ -1,5 +1,53 @@
 <template>
     <lightning-card title="🎌 Anime Explorer" icon-name="standard:feed">
         <h1>This is my anime Explorer App</h1>
+        <!-- Search bar to search anime  -->
+        <c-anime-search-bar
+            search-query={searchQuery}
+            selected-type={selectedType}
+            selected-status={selectedStatus}
+            selected-rating={selectedRating}
+            is-loading={isLoading}
+            onsearch={handleSearch}
+            onreset={handleReset}
+        >
+        </c-anime-search-bar>
+<!-- loading .. -->
+        <template if:true={isLoading}>
+            <div class="spinner-wrap">
+                <lightning-spinner
+                    size="large"
+                    variant="brand"
+                    alternative-text="Loading..."
+                ></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error ..... -->
+         <template if:true={errorMessage}>
+            <div class="slds-var-m-around_medium error-banner">
+                <lightning-icon
+                    icon-name="utility:error"
+                    size="small"
+                    variant="error"
+                    class="slds-var-m-right_x-small"
+                ></lightning-icon>
+                {errorMessage}
+            </div>
+         </template>
+
+          <c-anime-grid
+            anime-list={animeList}
+            is-loading={isLoading}
+            has-searched={hasSearched}
+            onviewdetail={handleViewDetail}>
+        </c-anime-grid>
+<!-- anime detail panel  -->
+         <template if:true={selectedAnime}>
+            <c-anime-detail-panel
+                anime={selectedAnime}
+                onclose={handleCloseDetail}>
+            </c-anime-detail-panel>
+        </template>
     </lightning-card>
 </template>

@@ -1,0 +1,11 @@
+.search-bar {
+    background: #f4f6f9;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e5ee;
+    border-top: 1px solid #e0e5ee;
+}
+.btn-col {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2px;
+}

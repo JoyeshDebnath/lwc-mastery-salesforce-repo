@@ -1,3 +1,14 @@
 <template>
-    
+    <div class="anime-card" onclick={handleAnimeClick} title={anime.title}>
+        <div class="card-img-wrap">
+            <img src={anime.imageUrl} alt={anime.title} class="card-img" onerror={handleImgError}/>
+            <span class="badge-score">★ {displayScore}</span>
+            <span class="badge-type">{anime.animeType}</span>
+        </div>
+         <div class="card-body">
+            <p class="card-title">{displayTitle}</p>
+            <p class="card-meta">{episodeLabel} · {anime.year}</p>
+            <span class={statusClass}>{anime.status}</span>
+        </div>
+    </div>
 </template>

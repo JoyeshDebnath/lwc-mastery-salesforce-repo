@@ -105,7 +105,7 @@ public class AnimeExplorerController {
         //             "large_image_url": "https://myanimelist.net/images/anime/4/19644l.webp"
         //         }
         //     },
-        Map<String,Object> images=(Map<String,Object>)item.get('iamges');
+        Map<String,Object> images=(Map<String,Object>)item.get('images');
         if(images!=null){
             Map<String,Object> jpg=(Map<String,Object>)images.get('jpg');
             if(jpg!=null){
