@@ -1,0 +1,17 @@
+<aura:component>
+    <aura:attribute name="title" type="String" access="public"/>
+    <aura:attribute name="subtitle" type="String" access="public"/>
+
+    <div class="slds-page-header custom-background slds-card_boundary">
+        <div class="slds-grid">
+            <div class="slds-col slds-has-flexi-truncate">
+                <div class="slds-media slds-no-space slds-grow custom-background ">
+                    <div class="slds-media__body">
+                        <h1 class="slds-page-header__title slds-truncate" title="{!v.title}"><strong> {!v.title}</strong></h1>
+                        <p class="slds-page-header__subtitle slds-truncate">{!v.subtitle}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="valueA" type="integer" default="0" access="public"/>
+    <aura:attribute name="valueB" type="integer" default="0" access="public"/>
+    <aura:attribute name="result" type="integer" access="public"/>
+    
+    
+    <lightning:input aura:id="" type="number" value="{!v.valueA}" required="true" label="Enter First Number"/>
+    <lightning:input aura:id="" type="number" value="{!v.valueB}" required="true" label="Enter Second Number"/>
+    <br/>
+    <h2>Result : <b>{!v.result}</b></h2>
+    <div>
+        <lightning:button name="add" label="Add" onclick="{!c.doCalc}" />
+        <lightning:button name="minus" label="Subtract" onclick="{!c.doCalc}" />
+        <lightning:button name="product" label="Multiply" onclick="{!c.doCalc}" />
+        <lightning:button name="divide" label="Divide" onclick="{!c.doCalc}" />
+    </div>
+</aura:component>

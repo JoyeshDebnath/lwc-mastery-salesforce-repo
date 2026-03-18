@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:registerEvent name="demoEvent" type="c:cmpDemoEvt"/>
+    
+    <div>
+    	<button class="slds-button slds-button_brand"  onclick="{!c.handleClick}">Child Button</button> 
+    </div>
+</aura:component>

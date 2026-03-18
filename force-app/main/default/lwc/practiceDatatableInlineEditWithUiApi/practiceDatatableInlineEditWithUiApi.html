@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Practice : Datatable Inline Edit With Ui Api" icon-name="custom:custom62">
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={contacts.data}
+                columns={cols}
+                onsave={handleSave}
+                draft-values={draftValues}
+                hide-checkbox-column
+            ></lightning-datatable>
+        </div>
+
+    </lightning-card>
+</template>

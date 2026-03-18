@@ -1,0 +1,24 @@
+<template>
+    <lightning-card variant="Narrow" title="Contact Creator ✨" icon-name="standard:contact">
+        <lightning-record-edit-form 
+            object-api-name={contactObj}
+            onsuccess={handleSuccess}
+            onsubmit={handleContactCreated}
+            >
+            <lightning-messages></lightning-messages>
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={firstname} required></lightning-input-field>
+                        <lightning-input-field field-name={lastname} required></lightning-input-field>
+                    </div>
+                    
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={email} required></lightning-input-field>
+                        <lightning-input-field field-name={phone} required></lightning-input-field>
+                    </div>
+                </div>
+
+                <lightning-button type="submit" variant="brand" label="Create Contact"></lightning-button>
+        </lightning-record-edit-form> 
+    </lightning-card>
+</template>

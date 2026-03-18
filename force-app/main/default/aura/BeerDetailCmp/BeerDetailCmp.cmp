@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="recordId" type="String" access="public"/>
+
+    <lightning:recordForm
+        recordId="{!v.recordId}"
+        objectApiName="Beer__c"
+        layoutType="Full"
+        mode="view"
+        columns="2"
+    />
+
+</aura:component>

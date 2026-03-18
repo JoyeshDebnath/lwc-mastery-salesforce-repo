@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <!-- Aura Value Change -->
+    <aura:attribute name="test" type="String"/>
+    <aura:handler name="change" value="{!v.test}" action="{!c.doChange}" />
+    
+    <lightning:button value="change Value" label="change Value" onclick="{!c.changeValue}"></lightning:button>
+</aura:component>

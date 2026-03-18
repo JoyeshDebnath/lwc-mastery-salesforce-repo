@@ -1,41 +1,48 @@
-var callbacks={};//stores all the events and calbacks 
-/**
- * Subscribing function 👇
- * @param {String} eventName --> name of the event to listen for  
- * @param {function} callback --> function to invoke when the said event fired 
- */
-const register=(eventName,callback)=>{
-    if(!callbacks[eventName]){
-        callbacks[eventName]=new Set();
-    }
-    callbacks[eventName].add(callback);
-}
+var callbacks = {}; 
 
-//unregistering OR unsubscribing the event 
-const unregister=(eventName,callback)=>{
-    if(callbacks[eventName]){
-        callbacks[eventName].delete(callback);
-    }
-}
 
-/**
- * @param {String} eventName==> name of the event to fire
- * @param {*} payload ==> payload of the event 
- */
-const fire=(eventName,payload)=>{
-    if(callbacks[eventName]){
-        callbacks[eventName].forEach(callback=>{
-            try{
-                callback(payload);
-            }catch(error){
-                console.error(error)
+const register = (eventname, callback) => {
+    if (!callbacks[eventname])
+    {
+        callbacks[eventname] = new Set();
+    }
+    callbacks[eventname].add(callback);
+};
+
+const unregister = (eventname, callback) => {
+    if (callbacks[eventname])
+    {
+        callbacks[eventname].delete(callback);
+    }
+};//delete the callback from the callbacks variable 
+
+const unregisterAll = () => { 
+    callbacks = {};
+}
+//deletes all the component s from the callbacks param & removes all the lsiteners and related Callback functions 
+
+
+const fire = (eventname, payload)=>{ 
+    if (callbacks[eventname])
+    { 
+        callbacks[eventname].forEach(callback => { 
+            try
+            {
+                callback(payload)
+            } catch (error)
+            { 
+                window.console.log(error);
+                //fail silently 
             }
         })
     }
 }
 
-export default{
+
+
+export default { 
     register,
     unregister,
+    unregisterAll,
     fire
 }

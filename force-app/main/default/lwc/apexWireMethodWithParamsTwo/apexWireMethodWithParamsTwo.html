@@ -1,0 +1,22 @@
+<template>
+    <lightning-card icon-name="custom:custom63" title="Apex Wire Method With Params ">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                type="search" 
+                label="Search" 
+                value={searchKey} 
+                onchange={handleKeyChange} 
+                class="slds-var-m-bottom_small">
+            </lightning-input>
+            <template lwc:if={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <div key={contact.Id} class="slds-grid">
+                        <span class="slds-col"><img class="slds-avatar slds-avatar_small slds-avatar_circle" src={contact.Picture__c} alt={contact.Name}></span>
+                        <span class="slds-col">{contact.Name}</span>
+                        
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

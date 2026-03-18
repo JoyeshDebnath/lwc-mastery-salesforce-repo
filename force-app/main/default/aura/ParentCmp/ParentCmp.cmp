@@ -1,0 +1,24 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="demoEvent" event="c:cmpDemoEvt" action="{!c.handleEvent}"/>
+    <aura:attribute name="eventValue" type="String"/>
+		
+		<!--SLDS card for parent label component-->
+                 <article class="slds-card">
+                   <div class="slds-card__header slds-grid">
+                     <h1>I am parent</h1>
+                  	</div><br/>
+
+            <!-- Including child component inside parent-->
+              <c:ChildCmp/>
+				<br/><br/>
+                </article>
+            
+            <!--SLDS card for child component response from event-->
+            <article class="slds-card">
+             <h1>I am child component</h1>
+            <div class="slds-card__header slds-grid slds-text-heading_large">
+                  {!v.eventValue}
+             </div>
+            </article>
+    
+</aura:component>

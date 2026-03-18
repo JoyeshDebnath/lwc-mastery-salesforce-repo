@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name='Whom' type='String' default='Joyesh Debnath' access='public'/>
+    <aura:attribute name='age' type='integer' default='25' access='private'/>
+    <!--SObject declaration -->
+    <aura:attribute name='ContactObj' type='Contact' access='public'/>
+    <aura:attribute name='colorArr' type='String[]' default="['Red','Green','Blue','White']" access='public'/>
+    <aura:attribute name='colorList' type='List' default="['Red','Green','Black']" access='public'/>
+    <aura:attribute name='colorSet' type='Set' default="['Red','Green','Black']" access='public'/>
+    
+    <p>Name : {!v.Whom}</p>
+    <p>Age : {!v.age}</p>
+    <p>Color : {!v.colorArr[1]}</p>
+    <lightning:input aura:id='testInput' label="Enter Age" />
+    <lightning:button value="Component Methods" label="Component Methods" onclick="{!c.doClick}"/>
+    
+</aura:component>

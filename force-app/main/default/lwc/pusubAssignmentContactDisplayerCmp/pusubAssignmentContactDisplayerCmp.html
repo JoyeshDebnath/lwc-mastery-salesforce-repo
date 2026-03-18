@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Contact List " icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <template if:true={contactList}>
+                <div class="slds-grid lds-grid_vertical">
+                    <template for:each={contactList} for:item="contact">
+                        <div class="slds-col" key={contact.Phone}>
+                                <div class="slds-media slds-media_center slds-m-around_medium">
+                                    <div class="slds-media__figure">
+                                        <lightning-avatar
+                                            alternative-text="Contact Photo"
+                                            size="large"
+                                            src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg">
+                                        </lightning-avatar>
+                                    </div>
+                                    <div class="slds-media__body">
+                                        <h1 class="slds-text-heading_medium">{contact.FirstName}  {contact.LastName}</h1>
+                                        <p>Email: {contact.Email}</p>
+                                        <p>Phone: {contact.Phone}</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

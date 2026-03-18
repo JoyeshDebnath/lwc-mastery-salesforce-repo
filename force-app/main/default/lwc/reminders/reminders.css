@@ -1,0 +1,37 @@
+.parent-container {
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    padding: 16px; /* Padding inside the card */
+    max-width: 400px; /* Limit the card width */
+    margin: 16px auto; /* Center the card horizontally */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.heading-container {
+    text-align: center; /* Center align the heading */
+    font-size: 18px; /* Slightly larger font for heading */
+    font-weight: bold; /* Make heading bold */
+    margin-bottom: 16px; /* Space below heading */
+}
+
+.text-container {
+    font-size: 14px; /* Normal font size */
+    color: #555; /* Slightly muted text color */
+    margin-bottom: 16px; /* Space below text */
+}
+
+.text-container p {
+    margin: 4px 0; /* Add a bit of space between paragraphs */
+}
+
+.btn-container {
+    display: flex; /* Use flex layout */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 8px; /* Space between buttons */
+    margin-top: 16px; /* Space above buttons */
+}
+
+lightning-icon {
+    cursor: pointer; /* Make icons clickable */
+}

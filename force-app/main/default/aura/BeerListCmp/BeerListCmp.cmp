@@ -1,0 +1,42 @@
+<aura:component>
+    <aura:attribute name="recordList" type="List" access="public" />
+    <aura:attribute name="recordId" type="String"/>
+    <lightning:overlayLibrary aurA:id="overlayLib"/>
+
+    <div class="slds-grid slds-wrap ">
+        <aura:iteration items="{!v.recordList}" var="record" indexVar="index">
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small ">
+                <div class="slds-card custom-shadow">
+                    <div class="slds-card__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                        <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-text-heading_small">{!record.Name}</h2>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="slds-button slds-button_neutral" data-recordId="{!record.Id}" onclick="{!c.showInfo}">View Details</button>
+                        </div>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__figure">
+                                <img src="{!record.Image__c}" alt="{!record.Name}"
+                                    style="width: 100px; height: 100px;" />
+                            </div>
+                            <div class="slds-media__body">
+                                <p>Price: {!record.Price__c}</p>
+                                <p>Brewery Name: {!record.brewery_Name__c}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </aura:iteration>
+    </div>
+
+    <div class="slds-p-arounnd-small">
+                <c:BeerDetailCmp recordId="{!v.recordId}"/>
+    </div>
+
+</aura:component>

@@ -1,0 +1,39 @@
+<template>
+    <lightning-card 
+        title="Apex Imperative Method With Params " 
+        icon-name="custom:custom63">
+            <div class="slds-var-m-around_medium ">
+                <lightning-layout  vertical-align="end"
+                class="slds-var-m-bottom_small" >
+                    <lightning-layout-item  flexibility="grow">     
+                     <lightning-input
+                            type="search"
+                            label="Search Contacts"
+                            value={searchKey}
+                            onchange={handleKeyChage}
+                           
+                    ></lightning-input>
+                    </lightning-layout-item>
+                <lightning-layout-item  class="slds-var-p-left_xx-small">
+                    <lightning-button
+                        label="Search"
+                        onclick={handleSearch}
+                       
+                    ></lightning-button>
+                </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div>
+                <template lwc:if={contacts}>
+                    <template for:each={contacts} for:item="contact">
+                        <lightning-layout key={contact.Id} >
+                            <lightning-layout-item flexibility="auto">
+                                <img src={contact.Picture__c} alt={contact.Name} class="slds-avatar slds-avatar_small slds-avatar_circle"/>
+                            </lightning-layout-item>
+                            <lightning-layout-item class="slds-var-p-left_xx-small">{contact.Name}</lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                </template>
+            </div>
+    </lightning-card>
+</template>

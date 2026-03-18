@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="Demo 1">
+        <div class="slds-p-around_medium">
+            <lightning-record-form record-id={recordId} object-api-name={objectApiName} fields={fields}></lightning-record-form>
+        </div>
+    </lightning-card>
+
+<!-- Display a Record with a Custom Field Layout Using lightning-record-view-form -->
+ <lightning-card title="Demo 2">
+        <div class="slds-p-around_medium">
+            <lightning-record-view-form record-id={recordId} object-api-name="Account">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-3">
+                       <lightning-formatted-text value={rating} class="slds-text-heading_large"></lightning-formatted-text>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-formatted-text value={name} class="slds-text-heading_large">
+                        </lightning-formatted-text>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-formatted-text value={owner} class="slds-text-heading_large">
+                        </lightning-formatted-text>
+                    </div>
+    </div>
+            </lightning-record-view-form>
+        </div>
+ </lightning-card>
+
+ <!-- Edit a Form  -->
+  <lightning-card title="Demo 3">
+        <div class="slds-p-around_medium">
+            <lightning-record-form record-id={recordId} object-api-name="Account" mode="edit" columns="2" layout-type="Compact"></lightning-record-form>
+        </div>
+
+  </lightning-card>
+    <lightning-card title="Demo 4">
+        <div class="slds-p-around_medium">
+            <lightning-record-form record-id={recordId} object-api-name="Account" mode="edit" fields={fields}></lightning-record-form>
+        </div>
+
+  </lightning-card>
+    <lightning-card title="Demo 5">
+        <div class="slds-p-around_medium">
+            <lightning-record-edit-form record-id={recordId} object-api-name="Account">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-3">
+                       <lightning-formatted-text   class="slds-text-heading_large"></lightning-formatted-text>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input-field field-name="Name" class="slds-text-heading_large">
+                        </lightning-input-field>
+                        <lightning-input-field field-name="Rating" class="slds-text-heading_large">
+                        </lightning-input-field> 
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input-field field-name="Phone" class="slds-text-heading_large">
+                        </lightning-input-field>
+                        <lightning-input-field field-name="Industry" class="slds-text-heading_large">
+                        </lightning-input-field>
+                    </div>
+                    
+                    
+    </div>
+    <div class="slds-align_absolute-center slds-p-around_medium">
+      <lightning-button
+        class="slds-m-around_xx-small"
+        label="Cancel"
+        onclick={handleReset}
+      ></lightning-button>
+      <lightning-button
+        class="slds-m-around_xx-small"
+        label="Create Contact"
+        type="submit"
+        variant="brand"
+      ></lightning-button>
+    </div>  
+
+    </lightning-record-edit-form>
+        </div>
+
+  </lightning-card>
+</template>

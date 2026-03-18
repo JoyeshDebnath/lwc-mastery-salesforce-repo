@@ -1,0 +1,25 @@
+<template>
+
+    
+    <div class="cart-container" style="background:white;">
+        <div class="cart-icon-wrapper">
+            <lightning-icon icon-name="utility:cart" alternative-text="Cart" size="small"></lightning-icon>
+            <span class="cart-count">{itemsInCart}</span>
+        </div>
+    </div>
+
+
+        <div class="slds-m-left_small slds-m-right_small slds-m-bottom_small">
+            <c-lwc_-beer-search-cmp onsearch={handleSearch}></c-lwc_-beer-search-cmp>
+        </div>
+        <div>
+            <div class="slds-grid slds-wrap">
+                <template for:each={beerRecords} for:item="beer">
+                    <div class="slds-col slds-size_1-of-4" key={beer.Id}>
+                        <c-lwc_-beer-tile-cmp beer-record={beer} onaddtocart={handleAddToCart}></c-lwc_-beer-tile-cmp>
+                    </div>
+                </template>
+            </div>
+        </div>
+    
+</template>

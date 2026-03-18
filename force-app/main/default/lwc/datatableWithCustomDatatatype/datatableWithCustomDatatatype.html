@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Custom Datataype Lightning Data - table " icon-name="custom:custom62">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={contacts.data}>
+                <c-custom-data-types-two
+                    columns={columns}
+                    key-field="Id"
+                    hide-checkbox-column="true"
+                    data={contacts.data}
+                ></c-custom-data-types-two>
+            </template>
+        </div>
+    </lightning-card>
+</template>

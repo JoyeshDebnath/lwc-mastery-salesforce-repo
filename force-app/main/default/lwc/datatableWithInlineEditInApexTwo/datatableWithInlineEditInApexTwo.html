@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Practice Datatable With Apex Inline Update .." icon-name="custom:custom62">
+        <div class="slds-var-m-around__medium">
+            <template lwc:if={contacts.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contacts.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}
+                    hide-checkbox-column
+                ></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

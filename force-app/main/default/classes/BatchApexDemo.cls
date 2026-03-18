@@ -1,23 +1,23 @@
-public  class BatchApexDemo implements Database.Batchable<SObject> {
-    
+/*
 
-    // Scenerio 1 : Mass Update Accounts Missing Phone Number 
+*/
+
+public  class BatchApexDemo implements Database.Batchable<sObject>{
+
     public Database.QueryLocator start(Database.BatchableContext bc ){
-        Date cuttOff=Date.today().addYears(-2);
-        String query='SELECT Id,Name,CloseDate,StageName,IsClosed FROM Opportunity WHERE CloseDate < :cuttOff AND IsClosed = False';
-        // String query='SELECT Id,Name, Phone FROM Account WHERE Phone=NULL ';
-        return  Database.getQueryLocator(query);
+        return Database.getQueryLocator('SELECT Id,Name FROM Account WHERE Rating=null');
     }
 
-    public void execute(Database.BatchableContext bc , List<Opportunity> oppList){
-        for(Opportunity opp:oppList){
-            opp.StageName='Closed Lost';
-            // opp.IsClosed=true;
+    public void execute(Database.BatchableContext bc , List<Account> scope){
+        //loop through the batch of accounts 
+        for(Account acc:scope){
+            acc.Rating='Hot';
+
         }
-        update oppList;
+        update scope;
     }
 
-    public void finish (Database.BatchableContext bc ){
-        System.debug('Batch Completed : Opprotunity  Updated .....');
+    public void finish(Database.BatchableContext bc ){
+        System.debug('Batch job has been finished !!!');
     }
 }

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Reminders" icon-name="standard:task">
+        <div class="slds-m-around_larger">
+            
+            <div class="slds-grid slds-wrap ">
+                <template for:each={reminderList} for:item="reminder" lwc:if={reminderList}>
+                        <div key={reminder.Id} class="slds-col slds-size_1-of-3">
+                            <div class="parent-container">
+                                <div class="heading-container">{reminder.Subject}</div>
+                                <div class="text-container">
+                                    <p>Description : {reminder.Description}</p>
+                                    <p>Due Date : {reminder.ActivityDate}</p>
+                                </div>
+                                <div class="btn-container">
+                                    <lightning-icon icon-name="action:preview" size="xx-small"></lightning-icon>
+                                    &nbsp;
+                                    <lightning-icon icon-name="action:edit" size="xx-small"></lightning-icon>
+                                </div>
+                            </div>
+                        </div>
+                </template>
+            </div>
+        
+        </div>
+    </lightning-card>
+</template>

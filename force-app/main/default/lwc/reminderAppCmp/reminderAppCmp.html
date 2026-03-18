@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Create  a TODO item " icon-name="standard:task">
+
+        <lightning-spinner variant="brand" size="small" lwc:if={isLoading}></lightning-spinner>
+        <lightning-layout multiple-rows>
+            <lightning-layout-item size="12" padding='around-small' small-device-size="12" medium-device-size="6"
+                large-device-size="6">
+                <lightning-input type="text" label="Subject" name="Subject" required="true" onchange={handleChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding='around-small' small-device-size="12" medium-device-size="6"
+                large-device-size="6">
+                <lightning-input type="date" label="Due Date" name="ActivityDate" required="true"
+                    onchange={handleChange}>
+                </lightning-input>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" padding='around-small' small-device-size="12" medium-device-size="6"
+                large-device-size="6">
+                <lightning-combobox name='Status' label='Status' placeholder='Status' options={statusOptions}
+                    onchange={handleChange}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding='around-small' small-device-size="12" medium-device-size="6"
+                large-device-size="6">
+                <lightning-combobox name='Priority' label='Priority' placeholder='Priority' options={priorityOptions}
+                    onchange={handleChange}></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding='around-small' small-device-size="12" medium-device-size="12"
+                large-device-size="12">
+                <lightning-textarea name="Description" label="Comment" onchange={handleChange}>
+                </lightning-textarea>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout multiple-rows>
+            <lightning-button class="slds-align_absolute-center" variant='brand' label='Create TODO' title='Create TODO'
+                onclick={handleSubmit}>
+            </lightning-button>
+        </lightning-layout>
+    </lightning-card>
+</template>

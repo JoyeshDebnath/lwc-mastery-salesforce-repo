@@ -22,5 +22,3 @@ export default class AnimeDetailPanel extends LightningElement {
         e.target.src = 'https://placehold.co/240x340/4f46e5/white?text=No+Image';
     }
 }
-
- 
