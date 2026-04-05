@@ -1,0 +1,50 @@
+:host { display: block; }
+
+.section {
+    padding: var(--pf-pad-section);
+    border-bottom: 0.5px solid var(--pf-border-section);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--pf-gap-xl);
+    margin-bottom: var(--pf-gap-xl);
+}
+
+.group-title {
+    font-size: var(--pf-fs-sm);
+    font-weight: 600;
+    color: var(--pf-text-primary);
+    margin: 0 0 var(--pf-gap-md);
+    letter-spacing: 0.02em;
+    transition: color var(--pf-trans);
+}
+
+.certs-block {
+    padding-top: var(--pf-gap-lg);
+    border-top: 0.5px solid var(--pf-border-section);
+}
+
+.cert-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pf-gap-sm);
+    margin-top: var(--pf-gap-md);
+}
+
+.cert-badge {
+    font-size: var(--pf-fs-xs);
+    border: 0.5px solid var(--pf-accent);
+    color: var(--pf-accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--pf-radius-sm);
+    letter-spacing: var(--pf-ls-sm);
+    opacity: 0.85;
+    transition: color var(--pf-trans), border-color var(--pf-trans), background var(--pf-trans);
+}
+
+.cert-badge:hover {
+    background: var(--pf-accent-subtle);
+    opacity: 1;
+}

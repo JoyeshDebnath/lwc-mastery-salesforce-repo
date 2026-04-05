@@ -1,0 +1,30 @@
+<template>
+    <section class="section" id="skills">
+        <c-section-header label="Skills"></c-section-header>
+
+        <div class="skills-grid">
+            <template for:each={skillGroups} for:item="group">
+                <div key={group.id} class="skill-group">
+                    <h3 class="group-title">{group.title}</h3>
+                    <template for:each={group.skills} for:item="skill">
+                        <c-skill-bar
+                            key={skill.name}
+                            name={skill.name}
+                            level={skill.level}
+                            pct={skill.pct}>
+                        </c-skill-bar>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+        <div class="certs-block">
+            <h3 class="group-title">Certifications</h3>
+            <div class="cert-row">
+                <template for:each={certifications} for:item="cert">
+                    <span key={cert} class="cert-badge">{cert}</span>
+                </template>
+            </div>
+        </div>
+    </section>
+</template>

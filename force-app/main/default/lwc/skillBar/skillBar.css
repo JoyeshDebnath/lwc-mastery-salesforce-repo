@@ -1,0 +1,40 @@
+:host { display: block; }
+
+.skill-row {
+    margin-bottom: 0.9rem;
+}
+
+.skill-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.35rem;
+}
+
+.skill-name {
+    font-size: var(--pf-fs-sm);
+    color: var(--pf-text-secondary);
+    transition: color var(--pf-trans);
+}
+
+.skill-level {
+    font-size: var(--pf-fs-xs);
+    color: var(--pf-accent);
+    letter-spacing: var(--pf-ls-sm);
+    transition: color var(--pf-trans);
+}
+
+.skill-track {
+    height: 3px;
+    background: var(--pf-bar-track);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: background var(--pf-trans);
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--pf-accent);
+    transition: width 0.7s ease, background var(--pf-trans);
+}

@@ -1,0 +1,17 @@
+<template>
+    <section class="section" id="projects">
+        <c-section-header label="Projects"></c-section-header>
+        <div class="projects-grid">
+            <template for:each={projects} for:item="proj">
+                <c-project-card
+                    key={proj.id}
+                    icon={proj.icon}
+                    title={proj.title}
+                    description={proj.description}
+                    url={proj.url}
+                    tags={proj.tagsJson}>
+                </c-project-card>
+            </template>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,12 @@
+:host { display: block; }
+
+.section {
+    padding: var(--pf-pad-section);
+    border-bottom: 0.5px solid var(--pf-border-section);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--pf-gap-md);
+}

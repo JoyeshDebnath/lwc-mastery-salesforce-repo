@@ -1,0 +1,11 @@
+:host { display: block; }
+
+.section-label {
+    font-size: var(--pf-fs-xs);
+    letter-spacing: var(--pf-ls-label);
+    text-transform: uppercase;
+    color: var(--pf-accent);
+    margin: 0 0 var(--pf-gap-lg);
+    opacity: 0.85;
+    transition: color var(--pf-trans);
+}

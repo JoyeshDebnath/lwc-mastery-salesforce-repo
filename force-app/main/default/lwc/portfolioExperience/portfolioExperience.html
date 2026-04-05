@@ -1,0 +1,17 @@
+<template>
+    <section class="section">
+        <c-section-header label="Experience"></c-section-header>
+        <div class="timeline">
+            <template for:each={experiences} for:item="experience">
+                <c-experience-item 
+                    key={experience.id} 
+                    company={experience.company}
+                    role={experience.role}
+                    period={experience.period}
+                    description={experience.description}
+                    is-last={experience.isLast}
+                    ></c-experience-item>
+            </template>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,44 @@
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+}
+.empty-icon { margin-bottom: 16px; opacity: 0.4; }
+.empty-title {
+    font-size: 15px; font-weight: 600;
+    color: #3e3e3c; margin-bottom: 6px;
+}
+.empty-sub { font-size: 13px; color: #706e6b; line-height: 1.6; }
+
+.detail-wrapper { padding: 16px 20px; }
+
+.detail-hero {
+    display: flex; align-items: center; gap: 16px;
+    background: #f4f6ff; border: 1px solid #dde3f5;
+    border-radius: 10px; padding: 16px; margin-bottom: 20px;
+}
+.hero-name  { font-size: 18px; font-weight: 700; color: #16325c; }
+.hero-cat   { font-size: 12px; color: #706e6b; margin-top: 3px; }
+
+.field-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;
+}
+.field-block {
+    display: flex; flex-direction: column; gap: 4px;
+    background: #fafbfc; border: 1px solid #e8eaf0;
+    border-radius: 8px; padding: 12px;
+}
+.field-label {
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.6px; color: #706e6b; font-weight: 600;
+}
+.field-value { font-size: 14px; font-weight: 600; color: #16325c; }
+.field-value.price { color: #2e844a; }
+.field-value.mono  { font-family: monospace; font-size: 12px; }
+
+.action-bar {
+    display: flex; gap: 10px; border-top: 1px solid #e8eaf0; padding-top: 16px;
+}

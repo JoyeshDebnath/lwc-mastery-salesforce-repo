@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Product List" icon-name="standard:product">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+            <!-- Search bar  -->
+            <lightning-input type="search" label="" placeholder="Search Product by Category or name" value={searchTerm}
+                onchange={handleSearch} class="slds-m-bottom_small"></lightning-input>
+   
+    <!-- product Rows  -->
+    <template if:true={filteredProducts.length}>
+        <template for:each={filteredProducts} for:item="product">
+            <div key={product.id} class={product.rowClass} onclick={handleProductClick} data-id={product.id}
+                data-name={product.name} data-price={product.price} data-category={product.category}>
+                <div class="product-info">
+                    <span class="product-name">{product.name}</span>
+                    <span class="product-category">{product.category}</span>
+                </div>
+                <div class="product-right">
+                    <span class="product-price">${product.price}</span>
+                    <lightning-badge label={product.stockLabel} class={product.stockClass}></lightning-badge>
+                </div>
+            </div>
+        </template>
+    </template>
+    <!-- No results -->
+    <template if:false={filteredProducts.length}>
+        <div class="no-results">
+            <lightning-icon icon-name="utility:search" size="small"></lightning-icon>
+            <span>No products found</span>
+        </div>
+    </template>
+
+    <!-- Clear selection button — only shown when something is selected -->
+    <template if:true={selectedProductId}>
+        <div class="slds-m-top_small">
+            <lightning-button label="Clear Selection" variant="destructive-text" icon-name="utility:close"
+                icon-position="left" onclick={handleClear}>
+            </lightning-button>
+        </div>
+    </template>
+
+    </div>
+     </lightning-card>
+</template>

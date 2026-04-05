@@ -1,0 +1,16 @@
+<template>
+    <div class="portfolio-wrapper">
+        <c-portfolio-nav is-dark={isDark} onthemetoggle={handleThemeToggle}></c-portfolio-nav>
+        <main>
+            <c-portfolio-hero></c-portfolio-hero>
+            <c-portfolio-experience></c-portfolio-experience>
+            <c-portfolio-skills></c-portfolio-skills>
+            <c-portfolio-projects></c-portfolio-projects>
+            <c-portfolio-contact></c-portfolio-contact>
+        </main>
+        <footer class="portfolio-footer">
+            <span>Built with LWC </span>
+            <span>© 2026 Joyesh Debnath</span>
+        </footer>
+    </div>
+</template>

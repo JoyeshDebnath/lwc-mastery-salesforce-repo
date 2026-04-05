@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Product Detail" icon-name="standard:orders">
+        <!-- eempty state  -->
+         <template if:false={selectedProduct}>
+            <div class="empty-state">
+                <lightning-icon
+                icon-name="utility:product_workspace"
+                size="large"
+                class="empty-icon"
+                ></lightning-icon>
+            </div>
+            <p class="empty-title">No products Selected!</p>
+            <p class="empty-sub">
+                Select a product from the Product List
+                to view its Details in this panel 😎
+            </p>
+         </template>
+         <!-- Detail View  -->
+          <template if:true={selectedProduct}>
+            <div class="detail-wrapper">
+                <!-- hero section  -->
+                 <div class="detail-hero">
+                    <div class="hero-icon">
+                        <lightning-icon icon-name="standard:product" size="large"></lightning-icon>
+                    </div>
+                    <div>
+                        <h2 class="hero-name">{selectedProduct.name}</h2>
+                        <p class="hero-cat">{selectedProduct.category}></p>
+                    </div>
+                 </div>
+
+                 <!-- fields grid  -->
+                  <div class="field-grid">
+                    <div class="field-block">
+                        <span class="field-label">Product ID</span>
+                        <span class="field-value mono">{selectedProduct.id}</span>
+                    </div>
+                    <div class="field-block">
+                        <span class="field-label">Price</span>
+                        <span class="field-value price">${selectedProduct.price}</span>
+                    </div>
+                    <div class="field-block">
+                        <span class="field-label">Category</span>
+                        <span class="field-value">{selectedProduct.category}</span>
+                    </div>
+                    <div class="field-block">
+                        <span class="field-label">Last Updated</span>
+                        <span class="field-value">{todayDate}</span>
+                    </div>
+                     <!-- Unselect button — publishes 'clear' back to channel -->
+                    <lightning-button
+                        variant="destructive-text"
+                        label="Unselect"
+                        icon-name="utility:close"
+                        onclick={handleUnselect}>
+                    </lightning-button>
+                  </div>
+            </div>
+          </template>
+    </lightning-card>
+</template>

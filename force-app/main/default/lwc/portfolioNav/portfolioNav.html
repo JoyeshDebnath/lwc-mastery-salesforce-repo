@@ -1,0 +1,19 @@
+<template>
+    <nav class="nav">
+        <div class="nav-logo">JD.</div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About ME</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-right">
+            <a href={resumeUrl} target="_blank" class="nav-resume">Resume📜</a>
+            <button class="theme-toggle" onclick={handleToggle} aria-label="Toggle theme" title="Toggle Light/Dark">
+                <span if:true={isDark}>☀️</span>
+                <span if:false={isDark}>🌙</span>
+            </button>
+        </div>
+    </nav>
+</template>

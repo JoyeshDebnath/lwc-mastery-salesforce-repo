@@ -1,0 +1,30 @@
+<template>
+    <section class="section" id="contact">
+        <c-section-header label="Contact"></c-section-header>
+        <div class="contact-grid">
+            <div class="links-col">
+                <template for:each={contactLinks} for:item="link">
+                    <c-contact-link
+                        key={link.id}
+                        icon={link.icon}
+                        label={link.label}
+                        value={link.value}
+                        href={link.href}>
+                    </c-contact-link>
+                </template>
+            </div>
+            <div class="form-col">
+                <input  class="form-field" type="text"  placeholder="Your name"
+                        value={formName}    onchange={handleName} />
+                <input  class="form-field" type="email" placeholder="Your email"
+                        value={formEmail}   onchange={handleEmail} />
+                <textarea class="form-field form-area"  placeholder="Message..."
+                        onchange={handleMessage}></textarea>
+                <template if:true={submitSuccess}>
+                    <p class="success-msg">✓ Message sent!</p>
+                </template>
+                <button class="form-btn" onclick={handleSubmit}>Send Message</button>
+            </div>
+        </div>
+    </section>
+</template>

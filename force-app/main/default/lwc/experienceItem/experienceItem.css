@@ -1,0 +1,64 @@
+:host { display: block; }
+
+.exp-item {
+    display: flex;
+    gap: var(--pf-gap-lg);
+    padding-bottom: var(--pf-gap-lg);
+}
+
+.timeline-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--pf-accent);
+    flex-shrink: 0;
+    transition: background var(--pf-trans);
+}
+
+.timeline-line {
+    width: 1px;
+    flex: 1;
+    min-height: 40px;
+    background: var(--pf-accent-subtle);
+    transition: background var(--pf-trans);
+}
+
+.company {
+    font-size: var(--pf-fs-body);
+    font-weight: 600;
+    color: var(--pf-text-primary);
+    margin: 0 0 0.2rem;
+    transition: color var(--pf-trans);
+}
+
+.role {
+    font-size: var(--pf-fs-sm);
+    color: var(--pf-text-secondary);
+    margin: 0 0 0.2rem;
+    transition: color var(--pf-trans);
+}
+
+.period {
+    font-size: var(--pf-fs-xs);
+    color: var(--pf-accent-muted);
+    letter-spacing: var(--pf-ls-sm);
+    margin: 0 0 0.5rem;
+    transition: color var(--pf-trans);
+}
+
+.description {
+    font-size: var(--pf-fs-sm);
+    color: var(--pf-text-muted);
+    line-height: var(--pf-lh-body);
+    margin: 0;
+    transition: color var(--pf-trans);
+}

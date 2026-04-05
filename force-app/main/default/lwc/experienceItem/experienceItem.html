@@ -1,0 +1,17 @@
+<template>
+    <div class="exp-item">
+        <div class="timeline-col">
+            <div class="dot"></div>
+            <template if:false={isLast}>
+                <div class="timeline-line"></div>
+            </template>
+        </div>
+        <div class="content">
+        <p class="company">{company}</p>
+        <p class="role">{role}</p>
+        <p class="period">{period}</p>
+        <p class="description">{description}</p>
+    </div>
+    </div>
+   
+</template>

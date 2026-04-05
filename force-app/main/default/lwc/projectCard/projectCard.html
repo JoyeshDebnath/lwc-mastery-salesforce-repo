@@ -1,0 +1,15 @@
+<template>
+    <article class="card">
+        <div class="card-top">
+            <span class="icon">{icon}</span>
+            <a href={url} target="_blank" rel="noopener noreferrer" class="external-link">↗</a>
+        </div>
+        <h3 class="title">{title}</h3>
+        <p class="description">{description}</p>
+        <div class="tags">
+            <template for:each={parsedTags} for:item="tag">
+                <span key={tag} class="tag">{tag}</span>
+            </template>
+        </div>
+    </article>
+</template>
